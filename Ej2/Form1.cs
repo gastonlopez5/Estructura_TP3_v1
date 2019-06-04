@@ -25,6 +25,7 @@ namespace Ej2
         int lugaresLibres = 10;
         int topePila = 9;
         int tope = -1;
+        Stack<clsAuto> autosPila = new Stack<clsAuto>();
         
         public Form1()
         {
@@ -38,12 +39,15 @@ namespace Ej2
             oAuto.Propietario = tbPropietario.Text;
             oAuto.HoraDeEntrada = DateTime.Now;
 
-            tope++;
-
+            
             if (tbPlaca.Text != string.Empty && tbPropietario.Text != string.Empty)
             {
+                tope++;
+
                 if (tope < 10)  //oArr.agregar(oAuto) NO IMPLEMENTA LA PILA (ver clsArreglo) 
                 {
+                    autosPila.Push(oAuto);
+
                     int i = dgvAutos.Rows.Count;
                     dgvAutos.Rows.Add();
                     dgvAutos.Rows[i].Cells["Placa"].Value = oAuto.Placa;
@@ -57,14 +61,13 @@ namespace Ej2
                     lblTope.Text = "";
                     lblLugares.Text = Convert.ToString(lugaresLibres);
                     lblTope.Text = Convert.ToString(tope);
+
+                    if (tope == 9)
+                    {
+                        MessageBox.Show("Estacionamiento Completo", "Entrada de Auto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnAgregar.Enabled = false;
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Estacionamiento Completo", "Entrada de Auto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnAgregar.Enabled = false;
-                    tope--;
-                }
-                
             } 
             else
             {
@@ -107,6 +110,7 @@ namespace Ej2
                 MessageBox.Show("Placa: " + placa + "\n\nPropietario: " + propietario + "\n\nHora de entrada: " + horaEntrada.ToString() + "\n\nHora de salida: " + horaSalida.ToString() + "\n\nTiempo: " + minutos.ToString() + " minutos" + "\n\nImporte: " + Convert.ToString(importe), "Salida de Auto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 dgvAutos.Rows.RemoveAt(tope);
+                autosPila.Pop();
                 topePila--;
                 btnAgregar.Enabled = true;
 
@@ -123,13 +127,7 @@ namespace Ej2
                 }
                 else lblTope.Text = Convert.ToString(tope);
             }
-            //else
-            //{
-            //    MessageBox.Show("Estacionamiento Vacio", "Salida de Auto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    btnSalir.Enabled = false;
-            //    lblTope.Text = "";
-            //}
-
+            
             //Linea 105 NO IMPLEMENTA LA PILA
             //dgvAutos.Rows.Remove(dgvAutos.CurrentRow);
             

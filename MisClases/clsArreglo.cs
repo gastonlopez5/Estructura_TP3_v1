@@ -21,28 +21,5 @@ namespace MisClases
             if (i == T - 1) return false;
             else return true;
         }
-
-        public bool agregar2(clsAuto oAuto)
-        {
-            j++;
-            autos.Push(oAuto);
-            if (j == T - 1) return false;
-            else return true;
-        }
-
-        public bool quitar()
-        {
-            j--;
-            if (j < -1)
-            {
-                return false;
-            }
-            else
-            {
-                autos.Pop();
-                return true;
-            }
-            
-        }
     }
 }

@@ -42,9 +42,9 @@
             this.btSeparar = new System.Windows.Forms.Button();
             this.btInvertir = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbContener = new System.Windows.Forms.TextBox();
             this.btQuitar = new System.Windows.Forms.Button();
             this.btLimpiar = new System.Windows.Forms.Button();
+            this.lblContiene = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -178,13 +178,6 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Contiene la Pila A el elemento?";
             // 
-            // tbContener
-            // 
-            this.tbContener.Location = new System.Drawing.Point(200, 130);
-            this.tbContener.Name = "tbContener";
-            this.tbContener.Size = new System.Drawing.Size(143, 20);
-            this.tbContener.TabIndex = 14;
-            // 
             // btQuitar
             // 
             this.btQuitar.Location = new System.Drawing.Point(517, 30);
@@ -205,14 +198,23 @@
             this.btLimpiar.UseVisualStyleBackColor = true;
             this.btLimpiar.Click += new System.EventHandler(this.BtLimpiar_Click);
             // 
+            // lblContiene
+            // 
+            this.lblContiene.BackColor = System.Drawing.Color.Gray;
+            this.lblContiene.Location = new System.Drawing.Point(213, 127);
+            this.lblContiene.Name = "lblContiene";
+            this.lblContiene.Size = new System.Drawing.Size(130, 23);
+            this.lblContiene.TabIndex = 17;
+            this.lblContiene.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 450);
+            this.Controls.Add(this.lblContiene);
             this.Controls.Add(this.btLimpiar);
             this.Controls.Add(this.btQuitar);
-            this.Controls.Add(this.tbContener);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btInvertir);
             this.Controls.Add(this.btSeparar);
@@ -250,9 +252,9 @@
         private System.Windows.Forms.Button btSeparar;
         private System.Windows.Forms.Button btInvertir;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbContener;
         private System.Windows.Forms.Button btQuitar;
         private System.Windows.Forms.Button btLimpiar;
+        private System.Windows.Forms.Label lblContiene;
     }
 }
 

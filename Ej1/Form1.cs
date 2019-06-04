@@ -60,21 +60,27 @@ namespace Ej1
             {
                 lvPilaB.Items.Add(Convert.ToString(elem));
             }
+
+            btSeparar.Enabled = false;
+            btQuitar.Enabled = false;
+            btInvertir.Enabled = false;
+            btCargar.Enabled = false;
+            btContiene.Enabled = false;
         }
 
         private void BtContiene_Click(object sender, EventArgs e)
         {
-            tbContener.Clear();
+            lblContiene.Text = "";
             a = Convert.ToInt32(tbElemento.Text);
             aa = p.contieneE(pilaA, a);
 
             if (aa == true)
             {
-                tbContener.Text = "Si";
+                lblContiene.Text = "Si";
             }
             else
             {
-                tbContener.Text = "No";
+                lblContiene.Text = "No";
             }
             
         }
@@ -143,6 +149,11 @@ namespace Ej1
             lvPilaB.Items.Clear();
             lvPilaC.Items.Clear();
 
+            btQuitar.Enabled = true;
+            btInvertir.Enabled = true;
+            btSeparar.Enabled = true;
+            btContiene.Enabled = true;
+            btCargar.Enabled = true;
         }
     }
 
