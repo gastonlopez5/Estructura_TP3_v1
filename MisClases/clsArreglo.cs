@@ -11,6 +11,8 @@ namespace MisClases
         const int T = 11;
         clsAuto[] arr = new clsAuto[T];
         int i = -1;
+        int j = -1;
+        Stack<clsAuto> autos = new Stack<clsAuto>();
 
         public bool agregar(clsAuto oAuto)
         {
@@ -18,6 +20,29 @@ namespace MisClases
             arr[i] = oAuto;
             if (i == T - 1) return false;
             else return true;
+        }
+
+        public bool agregar2(clsAuto oAuto)
+        {
+            j++;
+            autos.Push(oAuto);
+            if (j == T - 1) return false;
+            else return true;
+        }
+
+        public bool quitar()
+        {
+            j--;
+            if (j < -1)
+            {
+                return false;
+            }
+            else
+            {
+                autos.Pop();
+                return true;
+            }
+            
         }
     }
 }

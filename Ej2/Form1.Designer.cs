@@ -37,7 +37,9 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblLugares = new System.Windows.Forms.Label();
             this.lblTope = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +94,6 @@
             this.dgvAutos.Name = "dgvAutos";
             this.dgvAutos.Size = new System.Drawing.Size(389, 150);
             this.dgvAutos.TabIndex = 5;
-            this.dgvAutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAutos_CellClick);
             // 
             // btnAgregar
             // 
@@ -118,20 +119,39 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(69, 180);
+            this.label4.Location = new System.Drawing.Point(35, 177);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.Size = new System.Drawing.Size(138, 16);
             this.label4.TabIndex = 8;
-            this.label4.Text = "N° de Lugares";
+            this.label4.Text = "N° de Lugares Vacios";
+            // 
+            // lblLugares
+            // 
+            this.lblLugares.BackColor = System.Drawing.Color.Gray;
+            this.lblLugares.Location = new System.Drawing.Point(187, 164);
+            this.lblLugares.Name = "lblLugares";
+            this.lblLugares.Size = new System.Drawing.Size(156, 43);
+            this.lblLugares.TabIndex = 9;
+            this.lblLugares.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTope
             // 
             this.lblTope.BackColor = System.Drawing.Color.Gray;
-            this.lblTope.Location = new System.Drawing.Point(187, 164);
+            this.lblTope.Location = new System.Drawing.Point(187, 225);
             this.lblTope.Name = "lblTope";
             this.lblTope.Size = new System.Drawing.Size(156, 43);
-            this.lblTope.TabIndex = 9;
+            this.lblTope.TabIndex = 11;
             this.lblTope.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(99, 238);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Tope Pila";
             // 
             // Form1
             // 
@@ -139,6 +159,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 288);
             this.Controls.Add(this.lblTope);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblLugares);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAgregar);
@@ -168,7 +190,9 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLugares;
         private System.Windows.Forms.Label lblTope;
+        private System.Windows.Forms.Label label6;
     }
 }
 
